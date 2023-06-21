@@ -16,6 +16,7 @@ import java.sql.SQLException;
 /**
  *
  * @author wesll
+ * 
  */
 public class ScreenCreateUser extends JFrame {
 
@@ -133,3 +134,4 @@ public class ScreenCreateUser extends JFrame {
         });
     }
 }
+
