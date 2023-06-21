@@ -10,9 +10,21 @@ import ScreenDeleleUser.ScreenDeleleUser;
 import ScreenUserList.ScreenUserList;
 import ScreenUpdateUser.ScreenUpdateUser;
 
+/*
+ * Neste arquivo se encontra as rotas do sistema
+ */
 public class AppRoutes extends JFrame {
 
+   /*
+    * Neste método AppRoutes tem os botões que leva pra sua respectiva tela:
+    * EX: Tela de criação de usuário
+    */
     public AppRoutes() {
+        
+        /*
+         * Esse método se refere a interface do programa
+         * 
+         */
         setTitle("Menu do Sistema");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
@@ -21,7 +33,9 @@ public class AppRoutes extends JFrame {
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
-
+        
+        // Esse botão mostra a interface da criação de usuário
+        
         JButton createUserButton = new JButton("Criar Usuário");
         createUserButton.setPreferredSize(new Dimension(200, 50));
         createUserButton.addActionListener(new ActionListener() {
@@ -31,6 +45,9 @@ public class AppRoutes extends JFrame {
                 createUser.setVisible(true);
             }
         });
+        
+        
+        // Esse botão irá mostrar a interface que lista todos os usuários cadastrados
 
         JButton listUsersButton = new JButton("Listar Usuários");
         listUsersButton.setPreferredSize(new Dimension(200, 50));
@@ -42,6 +59,8 @@ public class AppRoutes extends JFrame {
                 userList.getUserList();
             }
         });
+
+        // Esse botão mostra a interface que atualiza o usuário pelo ID no banco de dados
 
         JButton updateUserButton = new JButton("Atualizar Usuário");
         updateUserButton.setPreferredSize(new Dimension(200, 50));
