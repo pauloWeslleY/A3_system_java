@@ -2,8 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
             <file>file:/C:/Users/guilh/projeto_a3/A3_system_java/src/ScreenUserList/ScreenUserList.java</file>
         </group>
+>>>>>>> b4aa726a58a9b487e7368b286553e63b5ac8dd75
     </open-files>
 </project-private>
