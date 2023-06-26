@@ -10,16 +10,17 @@ import ScreenDeleteUser.ScreenDeleteUser;
 import ScreenUserList.ScreenUserList;
 import ScreenUpdateUser.ScreenUpdateUser;
 
-
 /**
  * @author Weslley
  * Neste classe se encontra as rotas do sistema
  */
+
 public class AppRoutes extends JFrame {
 
-   /**
-    * Neste método AppRoutes tem os botões que leva pra sua respectiva tela
-    */
+       /*
+        * Neste método AppRoutes tem os botões que leva pra sua respectiva tela:
+        * EX: Tela de criação de usuário
+        */
     public AppRoutes() {
 
         /**
@@ -121,9 +122,10 @@ public class AppRoutes extends JFrame {
         add(screen);
     }
 
-    /**
-    *
-    *
+
+    /*
+    * Esse método é o ponto de entrada para a execução do pragrama, garantindo uma inicialização
+    * e exibição correta da interface do usuário.
     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {

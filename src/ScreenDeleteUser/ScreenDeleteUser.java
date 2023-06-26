@@ -51,6 +51,10 @@ public class ScreenDeleteUser extends JFrame {
             }
         });
 
+    /*
+     * Esse código define a posição e a adição do campo para inserir o ID do usuário, o botão de excluir e voltar
+     *
+     */
         gbc.gridx = 0;
         gbc.gridy = 0;
         panel.add(userIdLabel, gbc);
@@ -72,6 +76,11 @@ public class ScreenDeleteUser extends JFrame {
         add(panel);
     }
 
+
+    /*
+     * Esse método é responsável por executar a exclusão do usuário do banco de dados com base no ID inserido
+     *
+     */
     private void deleteUser(int userId) {
         try (Connection conn = DriverManager.getConnection(DB_URL); PreparedStatement stmt = conn.prepareStatement("DELETE FROM users WHERE id = ?")) {
 
@@ -91,6 +100,11 @@ public class ScreenDeleteUser extends JFrame {
         }
     }
 
+
+    /*
+     * Esse método torna visível ao usuário a tela de exclusão de usuário
+     *
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

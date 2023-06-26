@@ -17,13 +17,24 @@ import java.sql.SQLException;
  *
  * @author wesll
  */
-public class ScreenUpdateUser extends JFrame {
+
+    /*
+     * Esse código define a classe "ScreenUpdateUser" pode ser utilizada para
+     * construir a interface gráfica da aplicação e interagir com o 
+     * banco de dados para atualizar os dados do usuário
+     */
+ public class ScreenUpdateUser extends JFrame {
 
     private static final String DB_URL = "jdbc:sqlite:db/users.db";
     private JTextField userIdField;
     private JTextField nameField;
     private JTextField emailField;
 
+
+    /*
+     * Esse código cria a interface da tela de atualização de usuário, onde contém os campos de entrada, como
+     * "ID do Usuário, Novo Nome e Novo Email", e o botão "Atualizar" para executar a ação
+     */
     public ScreenUpdateUser() {
         setTitle("Atualizar Usuário");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,6 +76,11 @@ public class ScreenUpdateUser extends JFrame {
             }
         });
 
+
+    /*
+     * Esse código define as posições e as configurações de layout dos componentes dentro do painel, assim como
+     * as posições das células na grade e a largura dos componentes
+     */
         gbc.gridx = 0;
         gbc.gridy = 0;
         panel.add(userIdLabel, gbc);
@@ -102,6 +118,11 @@ public class ScreenUpdateUser extends JFrame {
         add(panel);
     }
 
+
+    /*
+     * Esse código realiza a atualização de informações de um usuário no banco de dados
+     * 
+     */
     private void updateUser(int userId, String newName, String newEmail) {
         try (Connection conn = DriverManager.getConnection(DB_URL); PreparedStatement stmt = conn.prepareStatement("UPDATE users SET name = ?, email = ? WHERE id = ?")) {
 
@@ -123,6 +144,11 @@ public class ScreenUpdateUser extends JFrame {
         }
     }
 
+
+    /*
+     * Esse código cria a janela de atualização de usuário
+     * 
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

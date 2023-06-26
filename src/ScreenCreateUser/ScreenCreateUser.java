@@ -16,6 +16,7 @@ import java.sql.SQLException;
 /**
  *
  * @author wesll
+ * 
  */
 public class ScreenCreateUser extends JFrame {
 
@@ -24,6 +25,12 @@ public class ScreenCreateUser extends JFrame {
     private JTextField emailField;
     private JPasswordField passwordField;
 
+
+    /*
+     * Esse código cria uma janela de criação de usuário com campos para inserir informações do 
+     * usuário ("Nome do Usuário, Email, Senha") e um botão para realizar a criação com base nessas informações
+     * 
+     */
     public ScreenCreateUser() {
         setTitle("Criar Usuário");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +60,8 @@ public class ScreenCreateUser extends JFrame {
                 createUser(username, email, password);
             }
         });
-
+    
+        
         JButton backButton = new JButton("Voltar");
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -65,6 +73,11 @@ public class ScreenCreateUser extends JFrame {
             }
         });
 
+    /*
+     * o código está definindo a disposição e a organização dos componentes visuais dentro do painel,
+     * em seguida, adicionando o painel à tela.
+     * 
+     */
         gbc.gridx = 0;
         gbc.gridy = 0;
         panel.add(usernameLabel, gbc);
@@ -102,6 +115,11 @@ public class ScreenCreateUser extends JFrame {
         add(panel);
     }
 
+    /*
+     * Esse método tem a fumção de criar um novo usuário no banco de dados assim como estabelecer a
+     * conexão com o banco
+     * 
+     */
     private void createUser(String username, String email, String password) {
         try (Connection conn = DriverManager.getConnection(DB_URL); PreparedStatement stmt = conn.prepareStatement("INSERT INTO users (username, email, password) VALUES (?, ?, ?)")) {
 
@@ -123,6 +141,11 @@ public class ScreenCreateUser extends JFrame {
         }
     }
 
+
+    /*
+     * Esse método torna visível a tela de criação de usuário, exibindo-a na tela
+     * 
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -133,3 +156,4 @@ public class ScreenCreateUser extends JFrame {
         });
     }
 }
+
