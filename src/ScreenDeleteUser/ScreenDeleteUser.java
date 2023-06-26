@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ScreenDeleleUser;
+package ScreenDeleteUser;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,12 +13,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class ScreenDeleleUser extends JFrame {
+public class ScreenDeleteUser extends JFrame {
 
     private static final String DB_URL = "jdbc:sqlite:db/users.db";
     private JTextField userIdField;
 
-    public ScreenDeleleUser() {
+    public ScreenDeleteUser() {
         setTitle("Excluir Usuário");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 200);
@@ -95,7 +95,7 @@ public class ScreenDeleleUser extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ScreenDeleleUser deleteUser = new ScreenDeleleUser();
+                ScreenDeleteUser deleteUser = new ScreenDeleteUser();
                 deleteUser.setVisible(true);
             }
         });
