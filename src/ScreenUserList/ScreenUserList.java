@@ -18,7 +18,12 @@ import java.sql.Statement;
  *
  * @author wesll
  */
-public class ScreenUserList extends JFrame {
+
+        /*
+         * Esse código representa a janela de listagem de usuários obtida a partir do banco de dados
+         * 
+         */
+ public class ScreenUserList extends JFrame {
 
     private static final String DB_URL = "jdbc:sqlite:db/users.db";
     private JTextArea userListArea;
@@ -54,6 +59,11 @@ public class ScreenUserList extends JFrame {
         loadUserList();
     }
 
+
+        /*
+         * Esse código estabelece uma conexão com o banco de dados e executa uma consulta para obter os usuários
+         * exibindo os resultados na área de texto
+         */
     public void loadUserList() {
         try (Connection conn = DriverManager.getConnection(DB_URL); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("SELECT * FROM users")) {
 
@@ -72,6 +82,11 @@ public class ScreenUserList extends JFrame {
         }
     }
 
+
+        /*
+         * Esse código obtém a lista de usuários do banco de dados, e apresenta a lista com informações
+         * detalhadas sobre cada usuário.
+         */
     public void getUserList() {
         StringBuilder userList = new StringBuilder();
 
@@ -99,6 +114,11 @@ public class ScreenUserList extends JFrame {
         userListArea.setText(userList.toString());
     }
 
+
+        /*
+         * Esse código é responsável por iniciar a execução do programa e tornar a janela visível para o usuário
+         * 
+         */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

@@ -13,6 +13,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+    /*
+     * Esse código define a tela de exclusão de usuário com um campo de texto para inserir o ID a ser excluído
+     * e um botão para realizao a exclusão
+     */
 public class ScreenDeleleUser extends JFrame {
 
     private static final String DB_URL = "jdbc:sqlite:db/users.db";
@@ -51,6 +55,10 @@ public class ScreenDeleleUser extends JFrame {
             }
         });
 
+    /*
+     * Esse código define a posição e a adição do campo para inserir o ID do usuário, o botão de excluir e voltar
+     * 
+     */
         gbc.gridx = 0;
         gbc.gridy = 0;
         panel.add(userIdLabel, gbc);
@@ -72,6 +80,11 @@ public class ScreenDeleleUser extends JFrame {
         add(panel);
     }
 
+
+    /*
+     * Esse método é responsável por executar a exclusão do usuário do banco de dados com base no ID inserido
+     * 
+     */
     private void deleteUser(int userId) {
         try (Connection conn = DriverManager.getConnection(DB_URL); PreparedStatement stmt = conn.prepareStatement("DELETE FROM users WHERE id = ?")) {
 
@@ -91,6 +104,11 @@ public class ScreenDeleleUser extends JFrame {
         }
     }
 
+
+    /*
+     * Esse método torna visível ao usuário a tela de exclusão de usuário
+     * 
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
