@@ -16,8 +16,8 @@ Após realizar o download do repositório, basta abrir a pasta do projeto do seu
 # 
 ## 💻Versões
 
-- **JDK **- 18
-- **Java** 8.0
+- **JDK** - 18
+- **Java** - 8.0
 - **SQLite** - 2.3.0
 - **JDBC** - 3.36.0.3
 
